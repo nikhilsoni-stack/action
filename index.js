@@ -7,7 +7,7 @@ const main = async () => {
      * We need to fetch all the inputs that were provided to our action
      * and store them in variables for us to use.
      **/
-    const owner = github.context.payload.repository.owner.name;
+    const owner = github.context.payload.repository.owner.login;
     const repo = github.context.payload.repository.name;
     const pr_number = github.context.payload.number;
     const token = core.getInput("token", { required: true });
