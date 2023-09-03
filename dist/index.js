@@ -9817,9 +9817,9 @@ const main = async () => {
      * We need to fetch all the inputs that were provided to our action
      * and store them in variables for us to use.
      **/
-    const owner = github.context.payload.repository.owner.login;
-    const repo = github.context.payload.repository.name;
-    const pr_number = github.context.payload.number;
+    const owner = core.getInput("owner", { required: true });
+    const repo = core.getInput("repo", { required: true });
+    const pr_number = core.getInput("pr_number", { required: true });
     const token = core.getInput("token", { required: true });
     const upperLimit = core.getInput("upperLimit");
 
