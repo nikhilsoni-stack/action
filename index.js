@@ -11,7 +11,7 @@ const main = async () => {
     const repo = github.repository;
 
     console.log(JSON.stringify(github));
-    const pr_number = github.event.pull_request.number;
+    //const pr_number = github.event.pull_request.number;
     const token = core.getInput("token", { required: true });
     const upperLimit = core.getInput("upperLimit");
 
