@@ -3,10 +3,9 @@ name: PR metadata annotation
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-
+permissions: write-all
 jobs:
   annotate-pr:
-    permissions: write-all
     runs-on: ubuntu-latest
     name: Annotates pull request with metadata
     steps:
