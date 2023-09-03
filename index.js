@@ -7,13 +7,13 @@ const main = async () => {
      * We need to fetch all the inputs that were provided to our action
      * and store them in variables for us to use.
      **/
-    const owner = github.repository_owner;
-    const repo = github.repository;
-
-    console.log(JSON.stringify(github));
-    //const pr_number = github.event.pull_request.number;
+    const owner = core.getInput("owner", { required: true });
+    const repo = core.getInput("repo", { required: true });
+    const pr_number = core.getInput("pr_number", { required: true });
     const token = core.getInput("token", { required: true });
     const upperLimit = core.getInput("upperLimit");
+
+    console.log(owner, repo, pr_number, token, upperLimit);
 
     /**
      * Now we need to create an instance of Octokit which will use to call
