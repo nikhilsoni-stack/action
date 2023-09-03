@@ -13,6 +13,8 @@ const main = async () => {
     const token = core.getInput("token", { required: true });
     const upperLimit = core.getInput("upperLimit");
 
+    console.log(owner, repo, pr_number, token, upperLimit);
+
     /**
      * Now we need to create an instance of Octokit which will use to call
      * GitHub's REST API endpoints.
